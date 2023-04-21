@@ -1,0 +1,4 @@
+mvn io.quarkus:quarkus-maven-plugin:0.13.1:create / "-DprojectGroupId=com.study.quarkus /" "-DprojectArtifactId=quarkus-project /" "-DclassName='com.study.quarkus.HelloResource' /" "-Dpath='/hello'"
+
+
+mvn io.quarkus.platform:quarkus-maven-plugin:2.16.6.Final:create / "-DprojectGroupId=org.acme /" "-DprojectArtifactId=getting-started /" "-Dextensions='resteasy-reactive'"
