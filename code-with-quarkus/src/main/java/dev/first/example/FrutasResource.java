@@ -1,7 +1,10 @@
 package dev.first.example;
 
 import dev.first.example.entities.Fruta;
+import dev.first.example.entities.FrutaRequest;
+import dev.first.example.services.FrutaService;
 
+import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,20 +14,19 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/frutas")
-public class GreetingResource {
+public class FrutasResource {
+
+    @Inject
+    FrutaService service;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Fruta> listar() {
-        return Fruta.listAll();
+        return service.lisar();
     }
 
     @POST
-    @Transactional
-    public void novaFruta() {
-        Fruta fruta = new Fruta();
-        fruta.setNome("Limão");
-        fruta.setQtde(12);
-        fruta.persist();
+    public void novaFruta(FrutaRequest request) {
+        service.cadatrarFurta(request);
     }
 }
