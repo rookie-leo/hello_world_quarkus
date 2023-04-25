@@ -15,7 +15,7 @@ public class FrutaService {
     @Inject
     IdentificadorTransacao identificadorTransacao;
 
-    public List<Fruta> lisar() {
+    public List<Fruta> listar() {
         System.out.println(identificadorTransacao.getIdentificadorTransacao());
         return Fruta.listAll();
     }
